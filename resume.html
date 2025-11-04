@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Yadav - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        
+        .resume {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 60px 40px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .contact {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            opacity: 0.95;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .content {
+            padding: 50px 60px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .objective {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.8;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skills-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-label {
+            font-weight: 600;
+            color: #2d3748;
+            display: inline-block;
+            min-width: 200px;
+            font-size: 15px;
+        }
+        
+        .skill-value {
+            color: #4a5568;
+            font-size: 15px;
+        }
+        
+        .project {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .project:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .project-header {
+            margin-bottom: 12px;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        
+        .project-tech {
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .project-points {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .project-points li {
+            color: #4a5568;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .project-points li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .degree {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .institution {
+            font-size: 15px;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+        
+        .coursework {
+            color: #4a5568;
+            font-size: 14px;
+            font-style: italic;
+            padding-left: 20px;
+        }
+        
+        .info-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .info-list li {
+            color: #4a5568;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .info-list li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 12px;
+        }
+        
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .project:hover {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header, .content {
+                padding: 30px 25px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .contact {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .skill-label {
+                min-width: auto;
+                display: block;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="header">
+            <h1>VIVEK YADAV</h1>
+            <div class="subtitle">Computer Science Student | Full-Stack Developer</div>
+            <div class="contact">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>+91 9152059648</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>botb07303@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>India</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <span><a href="https://github.com/vikki200625" target="_blank">GitHub: MyProfile</a></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Career Objective</h2>
+                <div class="objective">
+                    Motivated and enthusiastic Computer Science student with a strong interest in web development and emerging AI technologies. Passionate about building functional, user-friendly applications while continuously learning modern frameworks and tools to enhance development efficiency.
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">BSc in Computer Science – Currently Pursuing (2nd Year)</div>
+                    <div class="institution">Expected Graduation: 2027</div>
+                    <div class="coursework">Relevant Coursework: Data Structures, Java Programming, Database Management, Web Technologies</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-category">
+                    <span class="skill-label">Programming Languages:</span>
+                    <span class="skill-value">Java (Basic), JavaScript (Basic)</span>
+                </div>
+                <div class="skills-category">
+                    <span class="skill-label">Frontend Technologies:</span>
+                    <span class="skill-value">HTML, CSS, React.js</span>
+                </div>
+                <div class="skills-category">
+                    <span class="skill-label">Backend Technologies:</span>
+                    <span class="skill-value">Spring Boot (Basic), RESTful APIs</span>
+                </div>
+                <div class="skills-category">
+                    <span class="skill-label">Database:</span>
+                    <span class="skill-value">MySQL</span>
+                </div>
+                <div class="skills-category">
+                    <span class="skill-label">Tools & Platforms:</span>
+                    <span class="skill-value">Git, GitHub, Postman, IntelliJ IDEA, VS Code</span>
+                </div>
+                <div class="skills-category">
+                    <span class="skill-label">Core Concepts:</span>
+                    <span class="skill-value">CRUD Operations, API Testing, Generative AI, Object-Oriented Programming (OOP)</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-title">Task Manager Web Application</div>
+                        <div class="project-tech">React (Frontend) | Spring Boot (Backend) | MySQL | Postman | GitHub</div>
+                    </div>
+                    <ul class="project-points">
+                        <li>Designed and developed a Task Manager web app to manage daily tasks efficiently</li>
+                        <li>Implemented full <span class="highlight">CRUD operations</span> through REST APIs for seamless task management</li>
+                        <li>Tested all endpoints using <span class="highlight">Postman</span> to ensure smooth frontend-backend communication</li>
+                        <li>Successfully connected <span class="highlight">React frontend</span> with <span class="highlight">Spring Boot backend</span> and deployed both projects on GitHub</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Additional Information</h2>
+                <ul class="info-list">
+                    <li>Eager to learn new technologies and improve development skills</li>
+                    <li>Interested in AI, Web Development, and Full Stack Engineering</li>
+                    <li>Strong problem-solving attitude and teamwork spirit</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
